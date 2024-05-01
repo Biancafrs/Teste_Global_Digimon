@@ -1,0 +1,16 @@
+<div class="img">
+    <img src="{{foto}}" alt="">
+    <h2>Nome: {{nome}}</h2>
+    <h4>level: {{level}}</h4>
+</div>
+
+<div class="grid-container">
+    <div *ngFor="let row of digimons" class="row">
+      <div *ngFor="let digimon of row" class="grid-item">
+        <div>{{nome}}</div>
+        <div>{{foto}}</div>
+        <div>{{level}}</div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,32 @@
+<div class="welcome-container">
+  <p class="welcome-text">
+    <img src="assets\img\digimon.png" alt="Digimon"> <br>
+    Bem-vindo ao <span class="Digimon-text">Digimon!</span> <br> Clique no botão abaixo para explorar seus nomes e leveis!
+  </p>
+</div>
+
+
+<!-- CRIA UM TEXTO COM EVENTO DE CLIQUE -->
+<div class="welcome-container">
+  <p (click)="souUmaFuncaDeClique()" >Clique e Descubra o Universo de Digimon</p>
+</div>
+<div class="filtros">
+  <button class="level" (click)="filtrarPorLevel()">
+    Filtrar por Level
+  </button>
+  <button class="nome" (click)="filtrarPorNome()">Filtrar por nome</button>
+
+</div>
+
+<div *ngIf="listaDeDados.length !== 0" class="area-cards">
+  <div class="digimon-grid">
+    <app-digimon-card
+      *ngFor="let digimon of listaDeDados"
+      [nome]="digimon.nome"
+      [level]="digimon.level"
+      [foto]="digimon.foto"
+    ></app-digimon-card>
+  </div>
+</div>
+
+
